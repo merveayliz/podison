@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podison Restaurant | Griechische Premium Küche</title>
+    <!-- Google Fonts: Yunan havası veren modern bir yazı tipi -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Havalı Yunan Temalı Giriş Animasyonu (Splash Screen) -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <span class="splash-sub">KULINARISCHES ERBE</span>
+            <h1 class="splash-logo">PODISON</h1>
+            <div class="greek-divider">
+                <span class="line"></span>
+                <i class="fa-solid fa-gopuram"></i>
+                <span class="line"></span>
+            </div>
+            <p class="splash-loading">Wird geladen...</p>
+        </div>
+    </div>
+
+    <!-- Header / Navigasyon Bölümü -->
+    <header class="main-header">
+        <div class="logo">PODISON</div>
+        <nav class="nav-menu">
+            <a href="#menu-section" class="nav-link"><i class="fa-solid fa-utensils"></i> Menü</a>
+            <a href="#contact-section" class="nav-link"><i class="fa-solid fa-phone"></i> Kontakt</a>
+            <a href="#map-section" class="nav-link"><i class="fa-solid fa-map-location-dot"></i> Karte</a>
+        </nav>
+    </header>
+
+    <!-- Hero Alanı -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-text animate-up">
+            <h2>Ein Geschmack von Griechenland</h2>
+            <p>Erleben Sie traditionelle griechische Küche im Herzen von Deutschland. Frisch, authentisch und mit Liebe zubereitet.</p>
+            <a href="#menu-section" class="btn-greek">Menü Entdecken</a>
+        </div>
+    </section>
+
+
+
+
+    <!-- Hakkımızda (Über Uns) Bölümü -->
+    <section id="about-section" class="section-padding alt-bg">
+        <div class="container about-container">
+            
+            <!-- Sol Taraf: Hikaye ve Ekip Metni -->
+            <div class="about-text-box">
+                <span class="about-badge">UNSERE PHILOSOPHIE</span>
+                <h3 class="about-title">Über Uns & Das Team</h3>
+                <p class="about-desc">
+                    Willkommen im Restaurant Poseidon. Bei uns erleben Sie nicht nur die Vielfalt der griechischen Küche, sondern auch die sprichwörtliche Gastfreundschaft unseres eingespielten Teams. 
+                </p>
+                <p class="about-desc">
+                    Mit viel Leidenschaft, frischen Zutaten und einem Lächeln sorgen wir jeden Tag dafür, dass Ihr Aufenthalt bei uns im Herzen von Garching unvergesslich wird. Lernen Sie die Gesichter hinter den Kulissen kennen!
+                </p>
+                <div class="about-features">
+                    <div class="feat-item"><i class="fa-solid fa-heart"></i> Familiäre Atmosphäre</div>
+                    <div class="feat-item"><i class="fa-solid fa-star"></i> Erstklassiges Team</div>
+                </div>
+            </div>
+
+            <!-- Sağ Taraf: Hazırladığın 4 Fotoğraflık Şık Kolaj -->
+            <div class="about-gallery-grid">
+                <!-- 1. Fotoğraf (Örnek: Ekip Toplu Fotoğrafı) -->
+                <div class="gallery-item item-large">
+                    <img src="img/1.jpg" alt="Poseidon Team" class="gallery-img">
+                </div>
+                <!-- 2. Fotoğraf (Örnek: Mutfaktan Bir Kare) -->
+                <div class="gallery-item">
+                    <img src="img/2.jpg" alt="In der Küche" class="gallery-img">
+                </div>
+                <!-- 3. Fotoğraf (Örnek: Servis Esnasında) -->
+                <div class="gallery-item">
+                    <img src="img/3.jpg" alt="Unser Service" class="gallery-img">
+                </div>
+               
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="menu-section" class="section-padding">
+        <div class="container">
+            <h3 class="section-title">Unsere Speisekarte</h3>
+            <p class="section-subtitle">Frische Zutaten, traditionelle Rezepte</p>
+            
+            <div class="menu-photo-list">
+                <!-- Ürün 1 -->
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <!-- Hazırladığın görselin adını buraya yazıyorsun bebiş -->
+                        <img src="img/5.jpg" alt="Moussaka Klassiker" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Moussaka Klassiker</span>
+                            <span class="item-price">18,50 €</span>
+                        </div>
+                        <p class="item-desc">Schichten aus saftigen Auberginen, Hackfleisch und cremiger Béchamelsauce.</p>
+                    </div>
+                </div>
+
+                <!-- Ürün 2 -->
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <img src="img/6.jpg" alt="Souvlaki vom Grill" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Souvlaki vom Grill</span>
+                            <span class="item-price">16,90 €</span>
+                        </div>
+                        <p class="item-desc">Zwei Fleischspieße mit zartem Schweine- oder Hähnchenfleisch, dazu Oregano-Pommes und Tzatziki.</p>
+                    </div>
+                </div>
+
+                <!-- Ürün 3 -->
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <img src="img/7.jpg" alt="Griechischer Salat" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Echter Griechischer Salat</span>
+                            <span class="item-price">12,20 €</span>
+                        </div>
+                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
+                    </div>
+                </div>
+
+                  <!-- Ürün 3 -->
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <img src="img/8.jpg" alt="Griechischer Salat" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Echter Griechischer Salat</span>
+                            <span class="item-price">12,20 €</span>
+                        </div>
+                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
+                    </div>
+                </div>
+
+                  <!-- Ürün 3 -->
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <img src="img/9.jpg" alt="Griechischer Salat" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Echter Griechischer Salat</span>
+                            <span class="item-price">12,20 €</span>
+                        </div>
+                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
+                    </div>
+                </div>
+
+
+                <div class="menu-photo-card">
+                    <div class="menu-img-box">
+                        <img src="img/10.jpg" alt="Galaktoboureko" class="menu-thumb">
+                    </div>
+                    <div class="menu-text-box">
+                        <div class="menu-line-header">
+                            <span class="item-name">Galaktoboureko</span>
+                            <span class="item-price">7,50 €</span>
+                        </div>
+                        <p class="item-desc">Traditioneller griechischer Grießbrei-Auflauf im knusprigen Blätterteig mit Sirup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="contact-section" class="section-padding alt-bg">
+        <div class="container">
+            <h3 class="section-title">Kontakt & Reservierung</h3>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>Adresse</h4>
+                    <p>Freisinger Landstraße 3, <br>85748 Garching bei München, Deutschland</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>Telefon</h4>
+                    <p>+49 89 3206527</p>
+                </div>
+                <div class="contact-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Öffnungszeiten</h4>
+                    <p>Mo - So: 11:30 - 22:30 Uhr <br><span>(20–30 € pro Person)</span></p>
+                </div>
+
+                <div class="contact-card whatsapp-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <h4>Online Reservierung</h4>
+                    <p>Buchen Sie Ihren Tisch ganz einfach und schnell über WhatsApp!</p>
+                    <a href="https://wa.me/49893206527?text=Hallo%20Poseidon-Team%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Tisch%20reservieren." 
+                       target="_blank" 
+                       class="btn-whatsapp">
+                       <i class="fa-solid fa-calendar-check"></i> Jetzt Reservieren
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+<section id="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.4334336043944!2d11.650725576882662!3d48.25005824358896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e72fe5d1ab937%3A0x160e0a3fc2c665a4!2sPoseidon!5e0!3m2!1sde!2sde!4v1716584200000!5m2!1sde!2sde" 
+            width="100%" 
+            height="450" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+<footer class="greek-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 Poseidon Restaurant. Alle Rechte vorbehalten.</p>
+                
+                <p class="designer-signature">
+                    Designed with <i class="fa-solid fa-heart pulse-heart"></i> by 
+                    <a href="https://www.instagram.com/developerayliz?igsh=eWZrYnY2b2U5OGVu" target="_blank" class="brand-highlight">AylizDev</a>
+                    <span class="footer-spacer">|</span>
+                    <a href="https://www.instagram.com/developerayliz?igsh=eWZrYnY2b2U5OGVu" target="_blank" class="footer-insta-icon" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,740 @@
+/* --- TASARIM SİSTEMİ (YUNAN HAVASI) --- */
+:root {
+    --greek-blue: #0A2A4A;      /* Derin Mikonos Mavisi */
+    --greek-light-blue: #0088cc;/* Canlı Ege Mavisi */
+    --marble-white: #FFFFFF;    /* Saf Mermer Beyazı */
+    --soft-gray: #F9FBFC;       /* Arka Plan Kirli Beyazı */
+    --text-dark: #223344;       /* Koyu Antrasit Metin */
+    --font-heading: 'Cinzel', serif; /* Antik Yunan Esintili Font */
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--marble-white);
+    overflow-x: hidden;
+}
+
+/* --- HAVALI SPLASH GİRİŞ EKRANI --- */
+#splash-screen {
+    position: fixed;
+    inset: 0;
+    background-color: var(--greek-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: transform 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.splash-hidden {
+    transform: translateY(-100%);
+}
+
+.splash-content {
+    text-align: center;
+    color: var(--marble-white);
+}
+
+.splash-sub {
+    font-size: 0.85rem;
+    letter-spacing: 6px;
+    opacity: 0.8;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.splash-logo {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 8vw, 5rem);
+    letter-spacing: 8px;
+    font-weight: 700;
+}
+
+.greek-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.greek-divider .line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--greek-light-blue);
+}
+
+.greek-divider i {
+    color: var(--marble-white);
+    font-size: 1.2rem;
+}
+
+.splash-loading {
+    font-size: 0.9rem;
+    opacity: 0.5;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+/* --- NAVİGASYON (HEADER) --- */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(10, 42, 74, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    color: var(--marble-white);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    color: var(--marble-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    opacity: 0.8;
+}
+
+.nav-link:hover {
+    color: var(--greek-light-blue);
+    opacity: 1;
+}
+
+/* --- HERO ALANI --- */
+.hero {
+    height: 100vh;
+    background: url('img/ü.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(10, 42, 74, 0.7), rgba(10, 42, 74, 0.4));
+}
+
+.hero-text {
+    position: relative;
+    z-index: 10;
+    color: var(--marble-white);
+    max-width: 800px;
+}
+
+.hero-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.btn-greek {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--marble-white);
+    color: var(--greek-blue);
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: var(--transition);
+    border: 2px solid var(--marble-white);
+}
+
+.btn-greek:hover {
+    background-color: transparent;
+    color: var(--marble-white);
+}
+
+/* --- GENEL BÖLÜM AYARLARI --- */
+.section-padding {
+    padding: 100px 8%;
+}
+
+.alt-bg {
+    background-color: var(--soft-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--greek-blue);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--greek-light-blue);
+    font-weight: 600;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+}
+
+/* --- MENÜ BÖLÜMÜ --- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.menu-item {
+    background: var(--marble-white);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 3px solid var(--greek-blue);
+    box-shadow: 0 10px 30px rgba(10, 42, 74, 0.03);
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(10, 42, 74, 0.08);
+}
+
+.menu-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item-name {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--greek-blue);
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--greek-light-blue);
+    font-size: 1.1rem;
+}
+
+.item-desc {
+    color: #556677;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+/* --- MENÜ BÖLÜMÜ (GÖRSEL ODAKLI ELİT DÜZEN) --- */
+.menu-photo-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Yan yana asil ikişerli dizilim */
+    gap: 30px;
+}
+
+.menu-photo-card {
+    background: var(--marble-white);
+    padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(10, 42, 74, 0.03);
+    border: 1px solid rgba(10, 42, 74, 0.05);
+    display: flex; /* Fotoğraf ve yazıyı mükemmel bir şekilde yan yana hizalar */
+    align-items: center;
+    transition: var(--transition);
+}
+
+.menu-photo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(10, 42, 74, 0.08);
+    border-color: var(--greek-light-blue);
+}
+
+.menu-img-box {
+    width: 95px;       /* Fotoğraf genişliği kibar bir boyuta sabitlendi */
+    height: 95px;      /* Fotoğraf yüksekliği */
+    min-width: 95px;   /* Kart daralınca fotoğrafın büzüşmesini önler */
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f0f4f8;
+}
+
+.menu-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Görseli bozmadan kutunun içine tam oturtur */
+    transition: transform 0.4s ease;
+}
+
+.menu-photo-card:hover .menu-thumb {
+    transform: scale(1.06); /* Üzerine gelince tatlı bir yaklaşma efekti */
+}
+
+.menu-text-box {
+    padding-left: 20px; /* Yazıları fotoğraftan kibarca uzaklaştırır */
+    width: 100%;
+}
+
+.menu-line-header {
+    display: flex;
+    justify-content: space-between; /* İsmi sola, fiyatı en sağa yaslar */
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.item-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--greek-blue);
+}
+
+.item-price {
+    font-weight: 700;
+    color: var(--greek-light-blue);
+    font-size: 1.05rem;
+    white-space: nowrap;
+}
+
+.item-desc {
+    color: #556677;
+    font-size: 0.88rem;
+    line-height: 1.4;
+}
+
+
+/* --- İLETİŞİM BÖLÜMÜ --- */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.contact-card {
+    background: var(--marble-white);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.contact-card i {
+    font-size: 2rem;
+    color: var(--greek-light-blue);
+    margin-bottom: 20px;
+}
+
+.contact-card h4 {
+    font-family: var(--font-heading);
+    color: var(--greek-blue);
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.contact-card p {
+    color: #667788;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- FOOTER --- */
+.greek-footer {
+    background-color: var(--greek-blue);
+    color: var(--marble-white);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* --- HAKKIMIZDA (ABOUT) & EKİP GALERİSİ --- */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text-box {
+    flex: 1;
+}
+
+.about-badge {
+    color: var(--greek-light-blue);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.about-title {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    color: var(--greek-blue);
+    margin-bottom: 20px;
+}
+
+.about-desc {
+    color: #556677;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about-features {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.feat-item {
+    font-weight: 700;
+    color: var(--greek-blue);
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feat-item i {
+    color: var(--greek-light-blue);
+}
+
+/* 4'lü Dinamik Görsel Kolaj Yapısı */
+.about-gallery-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(10, 42, 74, 0.05);
+    aspect-ratio: 1 / 1; /* Fotoğrafları kare yapar */
+    border: 2px solid var(--marble-white);
+}
+
+.item-large {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1; 
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.04);
+}
+
+.contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+}
+
+.whatsapp-card {
+    border: 2px solid rgba(37, 211, 102, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #ffffff, #f6fff9); 
+}
+
+.whatsapp-card i.fa-brands fa-whatsapp {
+    color: #25D366; /* WhatsApp yeşili ikon */
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: #25D366;
+    color: var(--marble-white) !important;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+    background-color: #1cbd55;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.menu-photo-card {
+    background: var(--marble-white);
+    border: 1px solid rgba(10, 42, 74, 0.08) !important;
+    box-shadow: 0 8px 24px rgba(10, 42, 74, 0.05) !important;
+    border-radius: 14px !important;
+    padding: 18px !important;
+    transition: var(--transition);
+}
+
+.menu-photo-card:hover {
+    border-color: var(--greek-light-blue) !important;
+    box-shadow: 0 12px 30px rgba(0, 136, 204, 0.12) !important;
+    background: linear-gradient(to right, #ffffff, #fcfdfe);
+}
+
+.menu-img-box {
+    border: 2px solid rgba(10, 42, 74, 0.04);
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.05);
+}
+
+
+/* --- RAFİNE MINIMAL FOOTER & AYLIZDEV BRANDING --- */
+.greek-footer {
+    background: #06182B !important; /* Tamamen düz, derin gece mavisi mat arka plan */
+    color: rgba(255, 255, 255, 0.6);
+    padding: 24px 20px !important; /* Yüksekliği iyice daralttık knk, incecik bir şerit oldu */
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important; /* Çok hafif asil bir üst çizgi */
+    font-family: var(--font-body);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between; /* Bir uca telif yazısını, diğer uca senin imzanı koyar */
+    align-items: center;
+    font-size: 0.85rem; /* Yazıları kibarlaştırdık */
+}
+
+.copyright-text {
+    font-weight: 400;
+}
+
+.designer-signature {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+/* Kalp Atışı Efekti */
+.pulse-heart {
+    color: #e74c3c;
+    margin: 0 4px;
+    font-size: 0.8rem;
+    animation: heartBeat 1.8s infinite;
+}
+
+@keyframes heartBeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* AylizDev Yazısının Şıklaşması */
+.brand-highlight {
+    color: var(--marble-white) !important;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+}
+
+.brand-highlight:hover {
+    color: var(--greek-light-blue) !important;
+}
+
+/* İncelen Instagram İkonu */
+.footer-spacer {
+    margin: 0 10px;
+    opacity: 0.3;
+}
+
+.footer-insta-icon {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 1rem;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-insta-icon:hover {
+    color: #ee2a7b !important; /* Üzerine gelince tatlıca sadece ikon insta pembesi olur */
+    transform: scale(1.1);
+}
+
+/* --- MOBİL UYUMLULUK --- */
+@media screen and (max-width: 768px) {
+    .footer-bottom {
+        flex-direction: column !important; /* Mobilde sıkışmasın diye alt alta kibarca ortalanır */
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .main-header {
+        padding: 12px 5% !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
+
+    .nav-menu {
+        gap: 15px !important;
+    }
+
+    .logo {
+        font-size: 1.4rem !important;
+    }
+
+    .hero {
+        padding-top: 50px !important; 
+    }
+
+    .about-container {
+        flex-direction: column !important;
+        gap: 30px !important;
+    }
+
+    .about-gallery-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 10px !important;
+        max-width: 450px !important; 
+        width: 100% !important;
+        margin: 0 auto !important;
+    }
+
+    .gallery-item {
+        grid-column: auto !important; 
+        aspect-ratio: 1 / 1 !important; 
+        border-radius: 10px !important;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.08) !important;
+    }
+
+    
+    .contact-grid {
+        display: grid !important;
+        grid-template-columns: calc(50% - 8px) calc(50% - 8px) !important; 
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    .contact-card {
+        padding: 22px 15px !important;
+        border-radius: 12px !important;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.04) !important;
+    }
+
+    .contact-card i {
+        font-size: 1.6rem !important; 
+        margin-bottom: 12px !important;
+    }
+
+    .contact-card h4 {
+        font-size: 1rem !important;
+    }
+
+    .contact-card p {
+        font-size: 0.82rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .btn-whatsapp {
+        padding: 8px 16px !important; 
+        font-size: 0.8rem !important;
+        margin-top: 8px !important;
+    }
+
+
+    .menu-photo-list {
+        grid-template-columns: 1fr !important; 
+        gap: 16px !important;
+    }
+
+    .menu-photo-card {
+        padding: 12px !important;
+    }
+
+    .menu-img-box {
+        width: 80px !important; 
+        height: 80px !important;
+        min-width: 80px !important;
+    }
+
+    .menu-text-box {
+        padding-left: 15px !important;
+    }
+
+    .item-name {
+        font-size: 1.05rem !important;
+    }
+
+    .item-price {
+        font-size: 0.95rem !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .contact-card h4 {
+        font-size: 0.9rem !important;
+    }
+    .contact-card p {
+        font-size: 0.78rem !important;
+    }
+    .about-title {
+        font-size: 1.8rem !important;
+    }
+}
