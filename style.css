@@ -1,11 +1,10 @@
-/* --- TASARIM SİSTEMİ (YUNAN HAVASI) --- */
 :root {
-    --greek-blue: #0A2A4A;      /* Derin Mikonos Mavisi */
-    --greek-light-blue: #0088cc;/* Canlı Ege Mavisi */
-    --marble-white: #FFFFFF;    /* Saf Mermer Beyazı */
-    --soft-gray: #F9FBFC;       /* Arka Plan Kirli Beyazı */
-    --text-dark: #223344;       /* Koyu Antrasit Metin */
-    --font-heading: 'Cinzel', serif; /* Antik Yunan Esintili Font */
+    --greek-blue: #0A2A4A;    
+    --greek-light-blue: #0088cc;
+    --marble-white: #FFFFFF;   
+    --soft-gray: #F9FBFC;      
+    --text-dark: #223344;     
+    --font-heading: 'Cinzel', serif; 
     --font-body: 'Plus Jakarta Sans', sans-serif;
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -27,7 +26,6 @@ body {
     overflow-x: hidden;
 }
 
-/* --- HAVALI SPLASH GİRİŞ EKRANI --- */
 #splash-screen {
     position: fixed;
     inset: 0;
@@ -89,7 +87,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* --- NAVİGASYON (HEADER) --- */
 .main-header {
     position: fixed;
     top: 0;
@@ -132,7 +129,6 @@ body {
     opacity: 1;
 }
 
-/* --- HERO ALANI --- */
 .hero {
     height: 100vh;
     background: url('img/ü.jpg') no-repeat center center/cover;
@@ -190,7 +186,6 @@ body {
     color: var(--marble-white);
 }
 
-/* --- GENEL BÖLÜM AYARLARI --- */
 .section-padding {
     padding: 100px 8%;
 }
@@ -223,7 +218,6 @@ body {
     font-size: 0.85rem;
 }
 
-/* --- MENÜ BÖLÜMÜ --- */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -269,10 +263,10 @@ body {
     font-size: 0.95rem;
     line-height: 1.5;
 }
-/* --- MENÜ BÖLÜMÜ (GÖRSEL ODAKLI ELİT DÜZEN) --- */
+
 .menu-photo-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Yan yana asil ikişerli dizilim */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
 }
 
@@ -282,7 +276,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(10, 42, 74, 0.03);
     border: 1px solid rgba(10, 42, 74, 0.05);
-    display: flex; /* Fotoğraf ve yazıyı mükemmel bir şekilde yan yana hizalar */
+    display: flex; 
     align-items: center;
     transition: var(--transition);
 }
@@ -294,9 +288,9 @@ body {
 }
 
 .menu-img-box {
-    width: 95px;       /* Fotoğraf genişliği kibar bir boyuta sabitlendi */
-    height: 95px;      /* Fotoğraf yüksekliği */
-    min-width: 95px;   /* Kart daralınca fotoğrafın büzüşmesini önler */
+    width: 95px;      
+    height: 95px;    
+    min-width: 95px;   
     border-radius: 8px;
     overflow: hidden;
     background: #f0f4f8;
@@ -305,22 +299,22 @@ body {
 .menu-thumb {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Görseli bozmadan kutunun içine tam oturtur */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
 
 .menu-photo-card:hover .menu-thumb {
-    transform: scale(1.06); /* Üzerine gelince tatlı bir yaklaşma efekti */
+    transform: scale(1.06);
 }
 
 .menu-text-box {
-    padding-left: 20px; /* Yazıları fotoğraftan kibarca uzaklaştırır */
+    padding-left: 20px;
     width: 100%;
 }
 
 .menu-line-header {
     display: flex;
-    justify-content: space-between; /* İsmi sola, fiyatı en sağa yaslar */
+    justify-content: space-between; 
     align-items: baseline;
     margin-bottom: 6px;
 }
@@ -345,8 +339,6 @@ body {
     line-height: 1.4;
 }
 
-
-/* --- İLETİŞİM BÖLÜMÜ --- */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -380,7 +372,6 @@ body {
     line-height: 1.6;
 }
 
-/* --- FOOTER --- */
 .greek-footer {
     background-color: var(--greek-blue);
     color: var(--marble-white);
@@ -390,7 +381,6 @@ body {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* --- HAKKIMIZDA (ABOUT) & EKİP GALERİSİ --- */
 .about-container {
     display: flex;
     align-items: center;
@@ -443,7 +433,6 @@ body {
     color: var(--greek-light-blue);
 }
 
-/* 4'lü Dinamik Görsel Kolaj Yapısı */
 .about-gallery-grid {
     flex: 1;
     display: grid;
@@ -455,7 +444,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(10, 42, 74, 0.05);
-    aspect-ratio: 1 / 1; /* Fotoğrafları kare yapar */
+    aspect-ratio: 1 / 1; 
     border: 2px solid var(--marble-white);
 }
 
@@ -489,7 +478,7 @@ body {
 }
 
 .whatsapp-card i.fa-brands fa-whatsapp {
-    color: #25D366; /* WhatsApp yeşili ikon */
+    color: #25D366; 
 }
 
 .btn-whatsapp {
@@ -535,12 +524,11 @@ body {
 }
 
 
-/* --- RAFİNE MINIMAL FOOTER & AYLIZDEV BRANDING --- */
 .greek-footer {
-    background: #06182B !important; /* Tamamen düz, derin gece mavisi mat arka plan */
+    background: #06182B !important; 
     color: rgba(255, 255, 255, 0.6);
-    padding: 24px 20px !important; /* Yüksekliği iyice daralttık knk, incecik bir şerit oldu */
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important; /* Çok hafif asil bir üst çizgi */
+    padding: 24px 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important; 
     font-family: var(--font-body);
 }
 
@@ -552,9 +540,9 @@ body {
 
 .footer-bottom {
     display: flex;
-    justify-content: space-between; /* Bir uca telif yazısını, diğer uca senin imzanı koyar */
+    justify-content: space-between;
     align-items: center;
-    font-size: 0.85rem; /* Yazıları kibarlaştırdık */
+    font-size: 0.85rem;
 }
 
 .copyright-text {
@@ -567,7 +555,6 @@ body {
     align-items: center;
 }
 
-/* Kalp Atışı Efekti */
 .pulse-heart {
     color: #e74c3c;
     margin: 0 4px;
@@ -581,7 +568,6 @@ body {
     100% { transform: scale(1); }
 }
 
-/* AylizDev Yazısının Şıklaşması */
 .brand-highlight {
     color: var(--marble-white) !important;
     text-decoration: none;
@@ -595,7 +581,6 @@ body {
     color: var(--greek-light-blue) !important;
 }
 
-/* İncelen Instagram İkonu */
 .footer-spacer {
     margin: 0 10px;
     opacity: 0.3;
@@ -610,14 +595,13 @@ body {
 }
 
 .footer-insta-icon:hover {
-    color: #ee2a7b !important; /* Üzerine gelince tatlıca sadece ikon insta pembesi olur */
+    color: #ee2a7b !important; 
     transform: scale(1.1);
 }
 
-/* --- MOBİL UYUMLULUK --- */
 @media screen and (max-width: 768px) {
     .footer-bottom {
-        flex-direction: column !important; /* Mobilde sıkışmasın diye alt alta kibarca ortalanır */
+        flex-direction: column !important;
         gap: 8px;
         text-align: center;
     }
