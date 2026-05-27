@@ -1,4 +1,3 @@
-// --- PREMIUM GİRİŞ ANİMASYONU MOTORU ---
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         const splash = document.getElementById('splash-screen');
@@ -8,8 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }, 2000);
 });
 
-// --- TÜM DİL ÇEVİRİ SÖZLÜĞÜ ---
-// HTML'deki .item-name ve .item-desc yapılarına tam uyumlu sözlük
+
 const translations = {
     de: {
         navMenu: "<i class='fa-solid fa-utensils'></i> Menü",
@@ -26,7 +24,7 @@ const translations = {
         feat2: "<i class='fa-solid fa-star'></i> Erstklassiges Team",
         menuTitle: "Unsere Speisekarte",
         menuSubtitle: "Frische Zutaten, traditionelle Rezepte",
-        // HTML'deki 6 adet karta sırasıyla tam eşleşen yemek listesi
+      
         items: [
             { title: "Moussaka Klassiker", desc: "Schichten aus saftigen Auberginen, Hackfleisch und cremiger Béchamelsauce." },
             { title: "Souvlaki vom Grill", desc: "Zwei Fleischspieße mit zartem Schweine- oder Hähnchenfleisch, dazu Oregano-Pommes und Tzatziki." },
@@ -164,8 +162,8 @@ window.addEventListener('DOMContentLoaded', () => {
     langButtons.forEach(button => {
         button.addEventListener('click', () => {
             const selectedLang = button.getAttribute('data-lang');
+
             
-            // --- HEADER VE HERO ALANI ---
             document.getElementById('nav-menu-btn').innerHTML = translations[selectedLang].navMenu;
             document.getElementById('nav-contact-btn').innerHTML = translations[selectedLang].navContact;
             document.getElementById('nav-map-btn').innerHTML = translations[selectedLang].navMap;
@@ -173,8 +171,8 @@ window.addEventListener('DOMContentLoaded', () => {
             document.getElementById('hero-title').innerText = translations[selectedLang].heroTitle;
             document.getElementById('hero-desc').innerText = translations[selectedLang].heroDesc;
             document.getElementById('hero-btn').innerText = translations[selectedLang].heroBtn;
+
             
-            // --- HAKKIMIZDA (ABOUT) ALANI ---
             const aboutBadge = document.querySelector('.about-badge');
             if (aboutBadge) aboutBadge.innerText = translations[selectedLang].aboutBadge;
 
@@ -189,14 +187,13 @@ window.addEventListener('DOMContentLoaded', () => {
             if (featItems[0]) featItems[0].innerHTML = translations[selectedLang].feat1;
             if (featItems[1]) featItems[1].innerHTML = translations[selectedLang].feat2;
 
-            // --- MENÜ BAŞLIKLARI ---
+            
             const sectionTitles = document.querySelectorAll('.section-title');
             const sectionSubtitles = document.querySelectorAll('.section-subtitle');
             if (sectionTitles[0]) sectionTitles[0].innerText = translations[selectedLang].menuTitle;
             if (sectionSubtitles[0]) sectionSubtitles[0].innerText = translations[selectedLang].menuSubtitle;
 
-            // --- NOKTA ATIŞI ÜRÜN KARTLARI GÜNCELLEMESİ ---
-            // Senin yazdığın .item-name ve .item-desc sınıflarını doğrudan bulup metinleri değiştirir
+            
             const productCards = document.querySelectorAll('.menu-photo-card');
             productCards.forEach((card, index) => {
                 if (translations[selectedLang].items[index]) {
@@ -208,7 +205,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // --- İLETİŞİM ALANI ---
+            
             if (sectionTitles[1]) sectionTitles[1].innerText = translations[selectedLang].contactTitle;
 
             const contactCards = document.querySelectorAll('.contact-card');
@@ -227,7 +224,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (p) p.innerHTML = translations[selectedLang].contactHoursDesc;
             }
 
-            // WhatsApp Kartı
+            
             const whatsappCard = document.querySelector('.whatsapp-card');
             if (whatsappCard) {
                 const h4 = whatsappCard.querySelector('h4');
@@ -238,11 +235,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 if (btn) btn.innerHTML = translations[selectedLang].whatsappBtn;
             }
 
-            // --- FOOTER ALANI ---
+            
             const copyrightText = document.querySelector('.copyright-text');
             if (copyrightText) copyrightText.innerText = translations[selectedLang].copyright;
 
-            // --- MODAL KAPATMA VE GÖSTERME ---
+            
             if (langModal) langModal.classList.remove('modal-active');
             setTimeout(() => {
                 if (mainContent) mainContent.classList.add('content-visible');
