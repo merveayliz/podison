@@ -1,257 +1,252 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="notranslate" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podison Restaurant | Griechische Premium Küche</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Poseidon | Griechisches Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="splash-screen">
-    <div class="splash-content">
-        <span class="splash-sub">KULINARISCHES ERBE</span>
-        <h1 class="splash-logo">PODISON</h1>
-        <div class="greek-divider">
-            <span class="line"></span>
-            <i class="fa-solid fa-gopuram"></i>
-            <span class="line"></span>
-        </div>
-        <p class="splash-loading">Wird geladen...</p>
-    </div>
-</div>
+    <div class="app-shell">
+        <header class="topbar">
+            <button class="icon-btn ghost only-mobile" id="backButton" aria-label="Zurueck">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="brand" data-view="home" aria-label="Startseite">
+                <span class="brand-mark"><i class="fa-solid fa-anchor"></i></span>
+                <span>
+                    <strong>Poseidon</strong>
+                    <small>Griechisches Restaurant</small>
+                </span>
+            </button>
+            <nav class="desktop-nav" aria-label="Hauptnavigation">
+                <button data-view="home">Startseite</button>
+                <button data-view="menu">Speisekarte</button>
+                <button data-view="drinks">Getraenke</button>
+                <button data-view="reservation">Reservierung</button>
+                <button data-view="about">Ueber uns</button>
+                <button data-view="contact">Kontakt</button>
+            </nav>
+            <button class="icon-btn only-mobile" id="openMenu" aria-label="Menue oeffnen">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </header>
 
-<div id="language-modal" class="fixed-modal">
-    <div class="modal-content">
-        <h2 style="font-family: 'Cinzel', serif; letter-spacing: 4px; margin-bottom: 5px;">WELCOME TO PODISON</h2>
-        <p style="font-size: 11px; opacity: 0.6; letter-spacing: 2px; margin-bottom: 30px; text-transform: uppercase;">Bitte wählen Sie Ihre Sprache / Please select your language</p>
-        
-        <div class="lang-grid">
-            <button class="lang-btn" data-lang="de"><span>🇩🇪</span> DEUTSCH</button>
-            <button class="lang-btn" data-lang="el"><span>🇬🇷</span> ΕΛΛΗΝΙΚΑ</button>
-            <button class="lang-btn" data-lang="en"><span>🇬🇧</span> ENGLISH</button>
-            <button class="lang-btn" data-lang="tr"><span>🇹🇷</span> TÜRKÇE</button>
-        </div>
-    </div>
-</div>
-
-<div id="main-site-content" class="content-hidden">
-
-    <header class="main-header">
-        <div class="logo">PODISON</div>
-        <nav class="nav-menu">
-            <a href="#menu-section" class="nav-link" id="nav-menu-btn"><i class="fa-solid fa-utensils"></i> Menü</a>
-            <a href="#contact-section" class="nav-link" id="nav-contact-btn"><i class="fa-solid fa-phone"></i> Kontakt</a>
-            <a href="#map-section" class="nav-link" id="nav-map-btn"><i class="fa-solid fa-map-location-dot"></i> Karte</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-bg-image"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-text animate-up">
-            <h2 id="hero-title">Ein Geschmack von Griechenland</h2>
-            <p id="hero-desc">Erleben Sie traditionelle griechische Küche im Herzen von Deutschland. Frisch, authentisch und mit Liebe zubereitet.</p>
-            <a href="#menu-section" class="btn-greek" id="hero-btn">Menü Entdecken</a>
-        </div>
-    </section>
-
-
-
-    <section id="about-section" class="section-padding alt-bg">
-        <div class="container about-container">
-            
-            <div class="about-text-box">
-                <span class="about-badge">UNSERE PHILOSOPHIE</span>
-                <h3 class="about-title">Über Uns & Das Team</h3>
-                <p class="about-desc">
-                    Willkommen im Restaurant Poseidon. Bei uns erleben Sie nicht nur die Vielfalt der griechischen Küche, sondern auch die sprichwörtliche Gastfreundschaft unseres eingespielten Teams. 
-                </p>
-                <p class="about-desc">
-                    Mit viel Leidenschaft, frischen Zutaten und einem Lächeln sorgen wir jeden Tag dafür, dass Ihr Aufenthalt bei uns im Herzen von Garching unvergesslich wird. Lernen Sie die Gesichter hinter den Kulissen kennen!
-                </p>
-                <div class="about-features">
-                    <div class="feat-item"><i class="fa-solid fa-heart"></i> Familiäre Atmosphäre</div>
-                    <div class="feat-item"><i class="fa-solid fa-star"></i> Erstklassiges Team</div>
-                </div>
-            </div>
-
-            <div class="about-gallery-grid">
-                <div class="gallery-item item-large">
-                    <img src="img/1.jpg" alt="Poseidon Team" class="gallery-img">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/2.jpg" alt="In der Küche" class="gallery-img">
-                </div>
-                <div class="gallery-item">
-                    <img src="img/3.jpg" alt="Unser Service" class="gallery-img">
-                </div>
-               
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section id="menu-section" class="section-padding">
-        <div class="container">
-            <h3 class="section-title">Unsere Speisekarte</h3>
-            <p class="section-subtitle">Frische Zutaten, traditionelle Rezepte</p>
-            
-            <div class="menu-photo-list">
-           
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                      
-                        <img src="img/5.jpg" alt="Moussaka Klassiker" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Moussaka Klassiker</span>
-                            <span class="item-price">18,50 €</span>
-                        </div>
-                        <p class="item-desc">Schichten aus saftigen Auberginen, Hackfleisch und cremiger Béchamelsauce.</p>
+        <main class="phone-frame" id="app">
+            <section class="view active home-view" id="view-home" aria-labelledby="home-title">
+                <div class="hero-card">
+                    <img src="img/1.jpg" alt="Poseidon Restaurant Terrasse">
+                    <div class="olive olive-left"></div>
+                    <div class="olive olive-right"></div>
+                    <div class="hero-content">
+                        <h1 id="home-title"><big>Willkommen<br>im Poseidon</big></h1>
+                        <p>Griechische Gastfreundschaft,<br>mit Liebe serviert.</p>
+                        <button class="primary-btn" data-view="reservation">
+                            <span>Tisch reservieren</span>
+                            <i class="fa-regular fa-calendar"></i>
+                        </button>
                     </div>
                 </div>
 
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                        <img src="img/6.jpg" alt="Souvlaki vom Grill" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Souvlaki vom Grill</span>
-                            <span class="item-price">16,90 €</span>
-                        </div>
-                        <p class="item-desc">Zwei Fleischspieße mit zartem Schweine- oder Hähnchenfleisch, dazu Oregano-Pommes und Tzatziki.</p>
-                    </div>
+                <div class="quick-grid">
+                    <button class="quick-card" data-view="menu">
+                        <i class="fa-solid fa-utensils"></i>
+                        <strong>Speisekarte</strong>
+                        <span>Griechische Spezialitaeten</span>
+                    </button>
+                    <button class="quick-card" data-view="drinks">
+                        <i class="fa-solid fa-wine-glass"></i>
+                        <strong>Getraenke</strong>
+                        <span>Weine und Erfrischungen</span>
+                    </button>
+                    <button class="quick-card" data-view="about">
+                        <i class="fa-solid fa-church"></i>
+                        <strong>Ueber uns</strong>
+                        <span>Unsere Philosophie</span>
+                    </button>
                 </div>
 
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                        <img src="img/7.jpg" alt="Griechischer Salat" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Echter Griechischer Salat</span>
-                            <span class="item-price">12,20 €</span>
-                        </div>
-                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
-                    </div>
-                </div>
-
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                        <img src="img/8.jpg" alt="Griechischer Salat" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Echter Griechischer Salat</span>
-                            <span class="item-price">12,20 €</span>
-                        </div>
-                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
-                    </div>
-                </div>
-
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                        <img src="img/9.jpg" alt="Griechischer Salat" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Echter Griechischer Salat</span>
-                            <span class="item-price">12,20 €</span>
-                        </div>
-                        <p class="item-desc">Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl.</p>
-                    </div>
-                </div>
-
-
-                <div class="menu-photo-card">
-                    <div class="menu-img-box">
-                        <img src="img/10.jpg" alt="Galaktoboureko" class="menu-thumb">
-                    </div>
-                    <div class="menu-text-box">
-                        <div class="menu-line-header">
-                            <span class="item-name">Galaktoboureko</span>
-                            <span class="item-price">7,50 €</span>
-                        </div>
-                        <p class="item-desc">Traditioneller griechischer Grießbrei-Auflauf im knusprigen Blätterteig mit Sirup.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<section id="contact-section" class="section-padding alt-bg">
-        <div class="container">
-            <h3 class="section-title">Kontakt & Reservierung</h3>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <h4>Adresse</h4>
-                    <p>Freisinger Landstraße 3, <br>85748 Garching bei München, Deutschland</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fa-solid fa-phone"></i>
-                    <h4>Telefon</h4>
-                    <p>+49 89 3206527</p>
-                </div>
-                <div class="contact-card">
-                    <i class="fa-solid fa-clock"></i>
-                    <h4>Öffnungszeiten</h4>
-                    <p>Mo - So: 11:30 - 22:30 Uhr <br><span>(20–30 € pro Person)</span></p>
-                </div>
-
-                <div class="contact-card whatsapp-card">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <h4>Online Reservierung</h4>
-                    <p>Buchen Sie Ihren Tisch ganz einfach und schnell über WhatsApp!</p>
-                    <a href="https://wa.me/49893206527?text=Hallo%20Poseidon-Team%2C%20ich%20m%C3%B6chte%20gerne%20einen%20Tisch%20reservieren." 
-                       target="_blank" 
-                       class="btn-whatsapp">
-                       <i class="fa-solid fa-calendar-check"></i> Jetzt Reservieren
+                <div class="info-strip">
+                    <button data-view="contact">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Muenchener Str. 67<br>85748 Garching</span>
+                    </button>
+                    <button data-view="contact">
+                        <i class="fa-regular fa-clock"></i>
+                        <span>Di - So<br>11:30 - 23:00 Uhr</span>
+                    </button>
+                    <a href="tel:+49893202536">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>089 / 320 25 36</span>
                     </a>
                 </div>
+            </section>
 
+            <section class="view" id="view-menu" aria-labelledby="menu-title">
+                <div class="screen-head">
+                    <h2 id="menu-title">Unsere Speisekarte</h2>
+                    <span></span>
+                    <p>Authentische griechische Kueche mit frischen Zutaten.</p>
+                </div>
+                <label class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="menuSearch" placeholder="Gericht suchen...">
+                </label>
+                <div class="category-list" id="foodCategories"></div>
+            </section>
+
+            <section class="view" id="view-category" aria-labelledby="categoryTitle">
+                <div class="screen-head compact">
+                    <h2 id="categoryTitle">Vorspeisen</h2>
+                    <span></span>
+                </div>
+                <div class="dish-list" id="dishList"></div>
+            </section>
+
+            <section class="view detail-view" id="view-detail" aria-labelledby="detailTitle">
+                <div class="detail-hero">
+                    <img id="detailImage" src="img/meze.jpg" alt="">
+                    <button class="float-btn" id="detailBack" aria-label="Zurueck">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                </div>
+                <article class="detail-panel">
+                    <h2 id="detailTitle">Oktopus vom Grill</h2>
+                    <strong id="detailPrice">22,90 EUR</strong>
+                    <p id="detailText">Zarter Oktopus vom Grill mit Olivenoel, Zitrone und mediterranen Kraeutern.</p>
+                    <div class="badge-row" id="detailBadges"></div>
+                    <button class="primary-btn wide" data-view="reservation">
+                        <span>Reservieren</span>
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </button>
+                </article>
+            </section>
+
+            <section class="view" id="view-drinks" aria-labelledby="drinks-title">
+                <div class="screen-head compact">
+                    <h2 id="drinks-title">Getraenke</h2>
+                    <span></span>
+                </div>
+                <div class="drink-grid" id="drinkCategories"></div>
+            </section>
+
+            <section class="view" id="view-reservation" aria-labelledby="reservation-title">
+                <div class="screen-head compact">
+                    <h2 id="reservation-title">Tisch Reservieren</h2>
+                    <span></span>
+                </div>
+             
+<form class="reservation-form" id="reservationForm">
+    <div class="form-grid">
+
+        <label>Datum<input type="date" id="resDate" required></label>
+        <label>Uhrzeit<input type="time" id="resTime" value="19:00" required></label>
+    </div>
+
+    <label>Personen
+        <select id="resGuests" required>
+            <option value="2 Personen">2 Personen</option>
+            <option value="3 Personen">3 Personen</option>
+            <option value="4 Personen">4 Personen</option>
+            <option value="5+ Personen">5+ Personen</option>
+        </select>
+    </label>
+    <label>Ihr Name<input type="text" id="resName" placeholder="Max Mustermann" required></label>
+   
+    <label>Telefon<input type="tel" id="resPhone" placeholder="089 / 320 25 36" required></label>
+    
+   
+    <input type="hidden" id="resNote" value="">
+
+    <button class="primary-btn wide" type="submit">
+        <span>Reservierung absenden</span>
+        <i class="fa-regular fa-paper-plane"></i>
+    </button>
+    <p class="form-note" id="reservationNote" role="status"></p>
+</form>
+            </section>
+
+            <section class="view" id="view-about" aria-labelledby="about-title">
+                <div class="screen-head">
+                    <h2 id="about-title">Unsere Philosophie</h2>
+                    <span></span>
+                    <p>Im Poseidon verbinden wir griechische Tradition mit herzlicher Gastfreundschaft.</p>
+                </div>
+                <img class="wide-photo" src="img/h1.jpg" alt="Poseidon Restaurant Aussenbereich">
+                <hr>
+                <div class="stats">
+                    <div><i class="fa-solid fa-award"></i><strong>20+</strong><span>Jahre Erfahrung</span></div>
+                    <div><i class="fa-solid fa-leaf"></i><strong>Frisch</strong><span>Zutaten</span></div>
+                    <div><i class="fa-regular fa-star"></i><strong>Qualitaet</strong><span>Griechisch</span></div>
+                </div>
+                <hr>
+                <h3 class="section-title">Unser Restaurant</h3>
+                <div class="gallery">
+                    <img src="img/1.jpg" alt="Restaurant Terrasse">
+                    <img src="img/2.jpg" alt="Restaurant Ambiente">
+                </div>
+            </section>
+
+            <section class="view" id="view-contact" aria-labelledby="contact-title">
+                <div class="screen-head compact">
+                    <h2 id="contact-title">Besuchen Sie uns</h2>
+                    <span></span>
+                </div>
+                <div class="map-card">
+                    <iframe title="Poseidon Karte" loading="lazy" src="https://www.google.com/maps?q=Muenchener%20Str.%2067%2085748%20Garching&output=embed"></iframe>
+                    <div><i class="fa-solid fa-location-dot"></i>Muenchener Str. 67<br>85748 Garching</div>
+                </div>
+                <div class="contact-list">
+                    <a href="tel:+49893202536"><i class="fa-solid fa-phone"></i><span><strong>Telefon</strong>089 / 320 25 36</span></a>
+                    <a href="mailto:info@poseidon-garching.de"><i class="fa-regular fa-envelope"></i><span><strong>E-Mail</strong>info@poseidon-garching.de</span></a>
+                    <div><i class="fa-regular fa-clock"></i><span><strong>Oeffnungszeiten</strong>Di - So: 11:30 - 23:00 Uhr<br>Montag: Ruhetag</span></div>
+                </div>
+                <img class="wide-photo1" src="img/h2.jpg" alt="Restaurant Eingang">
+            </section>
+        </main>
+
+        <footer class="bottom-nav" aria-label="Mobile Navigation">
+            <button class="active" data-view="home"><i class="fa-solid fa-house"></i><span>Home</span></button>
+            <button data-view="menu"><i class="fa-solid fa-book-open"></i><span>Karte</span></button>
+            <button data-view="drinks"><i class="fa-solid fa-wine-bottle"></i><span>Getraenke</span></button>
+            <button data-view="reservation"><i class="fa-regular fa-calendar"></i><span>Reservieren</span></button>
+            <button data-view="contact"><i class="fa-solid fa-ellipsis"></i><span>Mehr</span></button>
+        </footer>
+    </div>
+
+    <aside class="side-menu" id="sideMenu" aria-hidden="true">
+        <div class="side-panel">
+            <div class="side-top">
+                <button class="brand inverted" data-view="home">
+                    <span class="brand-mark"><i class="fa-solid fa-anchor"></i></span>
+                    <span><strong>Poseidon</strong><small>Griechisches Restaurant</small></span>
+                </button>
+                <button class="icon-btn ghost-light" id="closeMenu" aria-label="Menue schliessen">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <nav class="side-links">
+                <button data-view="home"><i class="fa-solid fa-house"></i>Startseite</button>
+                <button data-view="menu"><i class="fa-solid fa-book-open"></i>Speisekarte</button>
+                <button data-view="drinks"><i class="fa-solid fa-wine-bottle"></i>Getraenke</button>
+                <button data-view="reservation"><i class="fa-regular fa-calendar"></i>Reservierung</button>
+                <button data-view="about"><i class="fa-regular fa-star"></i>Ueber uns</button>
+                <button data-view="contact"><i class="fa-solid fa-location-dot"></i>Kontakt</button>
+            </nav>
+            <div class="socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Standort"><i class="fa-solid fa-location-dot"></i></a>
             </div>
         </div>
-    </section>
-
-
-<section id="map-section">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2657.4334336043944!2d11.650725576882662!3d48.25005824358896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e72fe5d1ab937%3A0x160e0a3fc2c665a4!2sPoseidon!5e0!3m2!1sde!2sde!4v1716584200000!5m2!1sde!2sde" 
-            width="100%" 
-            height="450" 
-            style="border:0; display:block;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-    </section>
-
-
-<footer class="greek-footer">
-        <div class="footer-container">
-            <div class="footer-bottom">
-                <p class="copyright-text">© 2026 Poseidon Restaurant. Alle Rechte vorbehalten.</p>
-                
-                <p class="designer-signature">
-                    Designed with <i class="fa-solid fa-heart pulse-heart"></i> by 
-                    <a href="https://www.instagram.com/developerayliz?igsh=eWZrYnY2b2U5OGVu" target="_blank" class="brand-highlight">AylizDev</a>
-                    <span class="footer-spacer">|</span>
-                    <a href="https://www.instagram.com/developerayliz?igsh=eWZrYnY2b2U5OGVu" target="_blank" class="footer-insta-icon" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </p>
-            </div>
-        </div>
-    </footer>
-
-</div>
+    </aside>
+<footer class="minimal-footer">
+    <p>© 2026 Poseidon. Crafted by <a href="https://www.instagram.com/developerayliz?igsh=eWZrYnY2b2U5OGVu" target="_blank" rel="noopener noreferrer">ayliz dev</a></p>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>

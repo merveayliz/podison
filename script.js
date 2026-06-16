@@ -1,249 +1,441 @@
-window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const splash = document.getElementById('splash-screen');
-        if (splash) {
-            splash.classList.add('splash-hidden');
-        }
-    }, 2000);
-});
-
-
-const translations = {
-    de: {
-        navMenu: "<i class='fa-solid fa-utensils'></i> Menü",
-        navContact: "<i class='fa-solid fa-phone'></i> Kontakt",
-        navMap: "<i class='fa-solid fa-map-location-dot'></i> Karte",
-        heroTitle: "Ein Geschmack von Griechenland",
-        heroDesc: "Erleben Sie traditionelle griechische Küche im Herzen von Deutschland. Frisch, authentisch und mit Liebe zubereitet.",
-        heroBtn: "Menü Entdecken",
-        aboutBadge: "UNSERE PHILOSOPHIE",
-        aboutTitle: "Über Uns & Das Team",
-        aboutDesc1: "Willkommen im Restaurant Poseidon. Bei uns erleben Sie nicht nur die Vielfalt der griechischen Küche, sondern auch die sprichwörtliche Gastfreundschaft unseres eingespielten Teams.",
-        aboutDesc2: "Mit viel Leidenschaft, frischen Zutaten und einem Lächeln sorgen wir jeden Tag dafür, dass Ihr Aufenthalt bei uns im Herzen von Garching unvergesslich wird. Lernen Sie die Gesichter hinter den Kulissen kennen!",
-        feat1: "<i class='fa-solid fa-heart'></i> Familiäre Atmosphäre",
-        feat2: "<i class='fa-solid fa-star'></i> Erstklassiges Team",
-        menuTitle: "Unsere Speisekarte",
-        menuSubtitle: "Frische Zutaten, traditionelle Rezepte",
-      
+const categories = [
+    {
+        id: "vorspeisen",
+        title: "Vorspeisen",
+        image: "img/meze.jpg",
         items: [
-            { title: "Moussaka Klassiker", desc: "Schichten aus saftigen Auberginen, Hackfleisch und cremiger Béchamelsauce." },
-            { title: "Souvlaki vom Grill", desc: "Zwei Fleischspieße mit zartem Schweine- oder Hähnchenfleisch, dazu Oregano-Pommes und Tzatziki." },
-            { title: "Echter Griechischer Salat", desc: "Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl." },
-            { title: "Echter Griechischer Salat", desc: "Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl." },
-            { title: "Echter Griechischer Salat", desc: "Sonnengereifte Tomaten, Gurken, rote Zwiebeln, Oliven und originaler Feta-Käse mit nativem Olivenöl." },
-            { title: "Galaktoboureko", desc: "Traditioneller griechischer Grießbrei-Auflauf im knusprigen Blätterteig mit Sirup." }
-        ],
-        contactTitle: "Kontakt & Reservierung",
-        contactAddress: "Adresse",
-        contactPhone: "Telefon",
-        contactHours: "Öffnungszeiten",
-        contactHoursDesc: "Mo - So: 11:30 - 22:30 Uhr <br><span>(20–30 € pro Person)</span>",
-        whatsappTitle: "Online Reservierung",
-        whatsappDesc: "Buchen Sie Ihren Tisch ganz einfach und schnell über WhatsApp!",
-        whatsappBtn: "<i class='fa-solid fa-calendar-check'></i> Jetzt Reservieren",
-        copyright: "© 2026 Poseidon Restaurant. Alle Rechte vorbehalten."
+            {
+                name: "Tzatziki",
+                price: "4,90 EUR",
+                text: "Joghurt, Gurken, Knoblauch, Olivenoel und frische Kraeuter.",
+                image: "img/meze.jpg",
+                badges: ["Hausgemacht", "Glutenfrei"]
+            },
+            {
+                name: "Auberginen Salat",
+                price: "5,90 EUR",
+                text: "Gegrillte Auberginen mit Knoblauch, Petersilie und Olivenoel.",
+                image: "img/meze1.jpg",
+                badges: ["Vegan", "Frische Zutaten"]
+            },
+            {
+                name: "Dolmadakia",
+                price: "5,50 EUR",
+                text: "Weinblaetter gefuellt mit Reis, Kraeutern und Zitrone.",
+                image: "img/meze2.jpg",
+                badges: ["Mediterran", "Kalt serviert"]
+            },
+            {
+                name: "Feta Saganaki",
+                price: "6,50 EUR",
+                text: "Gebackener Fetakaese mit Honig, Sesam und feinem Oregano.",
+                image: "img/2.jpg",
+                badges: ["Empfehlung", "Vegetarisch"]
+            }
+        ]
     },
-    el: {
-        navMenu: "<i class='fa-solid fa-utensils'></i> Μενού",
-        navContact: "<i class='fa-solid fa-phone'></i> Επικοινωνία",
-        navMap: "<i class='fa-solid fa-map-location-dot'></i> Χάρτης",
-        heroTitle: "Μια γεύση από την Ελλάδα",
-        heroDesc: "Ζήστε την παραδοσιακή ελληνική κουζίνα στην καρδιά της Γερμανίας. Φρέσκο, αυθεντικό και φτιαγμένο με αγάπη.",
-        heroBtn: "Ανακαλύψτε το Μενού",
-        aboutBadge: "Η ΦΙΛΟΣΟΦΙΑ ΜΑΣ",
-        aboutTitle: "Σχετικά με εμάς & Η ομάδα",
-        aboutDesc1: "Καλώς ήρθατε στο Εστιατόριο Ποσειδών. Μαζί μας θα ζήσετε όχι μόνο την ποικιλία της ελληνικής κουζίνας, αλλά και την παροιμιώδη φιλοξενία της έμπειρης ομάδας μας.",
-        aboutDesc2: "Με πολύ πάθος, φρέσκα υλικά και ένα χαμόγελο, φροντίζουμε καθημερινά ώστε η διαμονή σας μαζί μας στην καρδιά του Garching να γίνει αξέχαστη. Γνωρίστε τα πρόσωπα πίσω από τα παρασκήνια!",
-        feat1: "<i class='fa-solid fa-heart'></i> Οικογενειακή Ατμόσφαιρα",
-        feat2: "<i class='fa-solid fa-star'></i> Πρώτης Τάξεως Ομάδα",
-        menuTitle: "Το Μενού μας",
-        menuSubtitle: "Φρέσκα υλικά, παραδοσιακές συνταγές",
+    {
+        id: "hauptgerichte",
+        title: "Hauptgerichte",
+        image: "img/hauptgerichte.jpg",
         items: [
-            { title: "Παραδοσιακός Μουσακάς", desc: "Στρώσεις από ζουμερές μελιτζάνες, κιμά και κρεμώδη μπεσαμέλ." },
-            { title: "Σουβλάκι στα Κάρβουνα", desc: "Δύο σουβλάκια από τρυφερό χοιρινό ή κοτόπουλο, με πατάτες ριγανάτες και τζατζίκι." },
-            { title: "Αυθεντική Χωριάτικη Σαλάτα", desc: "Ώριμες ντομάτες, αγγούρια, κρεμμύδι, ελιές και αυθεντική φέτα με έξτρα παρθένο ελαιόλαδο." },
-            { title: "Αυθεντική Χωριάτικη Σαλάτα", desc: "Ώριμες ντομάτες, αγγούρια, κρεμμύδι, ελιές και αυθεντική φέτα με έξτρα παρθένο ελαιόλαδο." },
-            { title: "Αυθεντική Χωριάτικη Σαλάτα", desc: "Ώριμες ντομάτες, αγγούρια, κρεμμύδι, ελιές και αυθεντική φέτα με έξτρα παρθένο ελαιόλαδο." },
-            { title: "Γαλακτομπούρεκο", desc: "Παραδοσιακό ελληνικό γλυκό με κρέμα σιμιγδαλιού σε τραγανό φύλλο με σιρόπι." }
-        ],
-        contactTitle: "Επικοινωνία & Κρατήσεις",
-        contactAddress: "Διεύθυνση",
-        contactPhone: "Τηλέφωνο",
-        contactHours: "Ωράριο Λειτουργίας",
-        contactHoursDesc: "Δε - Κυ: 11:30 - 22:30 <br><span>(20–30 € ανά άτομο)</span>",
-        whatsappTitle: "Online Κράτηση",
-        whatsappDesc: "Κλείστε το τραπέζι σας εύκολα και γρήγορα μέσω WhatsApp!",
-        whatsappBtn: "<i class='fa-solid fa-calendar-check'></i> Κάντε Κράτηση Τώρα",
-        copyright: "© 2026 Εστιατόριο Ποσειδών. Με επιφύλαξη παντός δικαιώματος."
+            {
+                name: "Gyros Spezial",
+                price: "14,90 EUR",
+                text: "Knuspriges Gyros mit Tzatziki, Pommes, Reis und Beilagensalat.",
+                image: "img/hauptgerichte.jpg",
+                badges: ["Beliebt", "Vom Grill"]
+            },
+            {
+                name: "Souvlaki Teller",
+                price: "15,90 EUR",
+                text: "Zwei marinierte Fleischspiesse mit Reis, Tzatziki und Gemuese.",
+                image: "img/hauptgerichte1.jpg",
+                badges: ["Klassiker", "Hausgewuerzt"]
+            },
+            {
+                name: "Bifteki",
+                price: "16,90 EUR",
+                text: "Hacksteak gefuellt mit Feta, dazu Kartoffeln und Salat.",
+                image: "img/hauptgerichte2.jpg",
+                badges: ["Herzhaft", "Mit Feta"]
+            },
+            {
+                name: "Oktopus vom Grill",
+                price: "22,90 EUR",
+                text: "Zarter Oktopus mariniert in Olivenoel, Zitrone und mediterranen Kraeutern. Serviert mit Gemuese und Kartoffeln.",
+                image: "img/hauptgerichte3.jpg",
+                badges: ["Empfehlung des Hauses", "Glutenfrei"]
+            }
+        ]
     },
-    en: {
-        navMenu: "<i class='fa-solid fa-utensils'></i> Menu",
-        navContact: "<i class='fa-solid fa-phone'></i> Contact",
-        navMap: "<i class='fa-solid fa-map-location-dot'></i> Map",
-        heroTitle: "A Taste of Greece",
-        heroDesc: "Experience traditional Greek cuisine in the heart of Germany. Fresh, authentic, and made with love.",
-        heroBtn: "Discover Menu",
-        aboutBadge: "OUR PHILOSOPHY",
-        aboutTitle: "About Us & The Team",
-        aboutDesc1: "Welcome to Poseidon Restaurant. With us, you will experience not only the diversity of Greek cuisine but also the proverbial hospitality of our well-established team.",
-        aboutDesc2: "With a lot of passion, fresh ingredients, and a smile, we ensure every day that your stay with us in the heart of Garching becomes unforgettable. Get to know the faces behind the scenes!",
-        feat1: "<i class='fa-solid fa-heart'></i> Family Atmosphere",
-        feat2: "<i class='fa-solid fa-star'></i> First-Class Team",
-        menuTitle: "Our Menu",
-        menuSubtitle: "Fresh ingredients, traditional recipes",
+    {
+        id: "fisch",
+        title: "Fisch & Meeresfruechte",
+        image: "img/3.jpg",
         items: [
-            { title: "Classic Moussaka", desc: "Layers of juicy eggplants, minced meat, and creamy béchamel sauce." },
-            { title: "Grilled Souvlaki", desc: "Two meat skewers with tender pork or chicken, served with oregano fries and tzatziki." },
-            { title: "Authentic Greek Salad", desc: "Sun-ripened tomatoes, cucumbers, red onions, olives, and original feta cheese with virgin olive oil." },
-            { title: "Authentic Greek Salad", desc: "Sun-ripened tomatoes, cucumbers, red onions, olives, and original feta cheese with virgin olive oil." },
-            { title: "Authentic Greek Salad", desc: "Sun-ripened tomatoes, cucumbers, red onions, olives, and original feta cheese with virgin olive oil." },
-            { title: "Galaktoboureko", desc: "Traditional Greek semolina custard in crispy phyllo pastry with syrup." }
-        ],
-        contactTitle: "Contact & Reservation",
-        contactAddress: "Address",
-        contactPhone: "Phone",
-        contactHours: "Opening Hours",
-        contactHoursDesc: "Mon - Sun: 11:30 AM - 10:30 PM <br><span>(20–30 € per person)</span>",
-        whatsappTitle: "Online Reservation",
-        whatsappDesc: "Book your table easily and quickly via WhatsApp!",
-        whatsappBtn: "<i class='fa-solid fa-calendar-check'></i> Book Now",
-        copyright: "© 2026 Poseidon Restaurant. All rights reserved."
+            {
+                name: "Dorade vom Grill",
+                price: "21,90 EUR",
+                text: "Ganze Dorade mit Zitrone, Kraeutern, Gemuese und Olivenoel.",
+                image: "img/3.jpg",
+                badges: ["Frisch", "Vom Grill"]
+            },
+            {
+                name: "Garnelen Pfanne",
+                price: "19,90 EUR",
+                text: "Garnelen in Tomaten-Knoblauch-Sauce mit Feta und Oregano.",
+                image: "img/33.jpg",
+                badges: ["Wuerzig", "Mit Feta"]
+            },
+            {
+                name: "Calamari",
+                price: "17,90 EUR",
+                text: "Zarte Calamari mit Zitrone, Knoblauch-Dip und Salat.",
+                image: "img/4.jpg",
+                badges: ["Knusprig", "Hausgemacht"]
+            }
+        ]
     },
-    tr: {
-        navMenu: "<i class='fa-solid fa-utensils'></i> Menü",
-        navContact: "<i class='fa-solid fa-phone'></i> İletişim",
-        navMap: "<i class='fa-solid fa-map-location-dot'></i> Harita",
-        heroTitle: "Yunanistan'dan Bir Lezzet",
-        heroDesc: "Almanya'nın kalbinde geleneksel Yunan mutfağını deneyimleyin. Taze, otantik ve sevgiyle hazırlanmış.",
-        heroBtn: "Menüyü Keşfet",
-        aboutBadge: "FELSEFEMİZ",
-        aboutTitle: "Hakkımızda & Ekip",
-        aboutDesc1: "Poseidon Restoranı'na hoş geldiniz. Bizimle sadece Yunan mutfağının çeşitliliğini değil, aynı zamanda deneyimli ekibimizin meşhur misafirperverliğini de yaşayacaksınız.",
-        aboutDesc2: "Büyük bir tutku, taze malzemeler ve bir gülümsemeyle, Garching'in kalbindeki konaklamanızın unutulmaz olmasını sağlamak için her gün çalışıyoruz. Sahne arkasındaki yüzleri tanıyın!",
-        feat1: "<i class='fa-solid fa-heart'></i> Aile Atmosferi",
-        feat2: "<i class='fa-solid fa-star'></i> Birinci Sınıf Ekip",
-        menuTitle: "Menümüz",
-        menuSubtitle: "Taze malzemeler, geleneksel tarifler",
+    {
+        id: "beilagen",
+        title: "Beilagen & Salate",
+        image: "img/44.jpg",
         items: [
-            { title: "Klasik Musakka", desc: "Nefis fırınlanmış patlıcan katmanları, kıyma ve kremsi beşamel sosu." },
-            { title: "Izgara Souvlaki", desc: "Yumuşak domuz veya tavuk etinden iki adet çöp şiş, yanında kekikli patates kızartması ve haydari (Tzatziki)." },
-            { title: "Gerçek Yunan Salatası", desc: "Güneşte olgunlaşmış domates, salatalık, kırmızı soğan, zeytin ve sızma zeytinyağlı orijinal beyaz peynir." },
-            { title: "Gerçek Yunan Salatası", desc: "Güneşte olgunlaşmış domates, salatalık, kırmızı soğan, zeytin ve sızma zeytinyağlı orijinal beyaz peynir." },
-            { title: "Gerçek Yunan Salatası", desc: "Güneşte olgunlaşmış domates, salatalık, kırmızı soğan, zeytin und sızma zeytinyağlı orijinal beyaz peynir." },
-            { title: "Galaktoboureko", desc: "Çıtır yufka arasında sunulan nefis irmikli kremalı ve şerbetli geleneksel Yunan tatlısı." }
-        ],
-        contactTitle: "İletişim & Rezervasyon",
-        contactAddress: "Adres",
-        contactPhone: "Telefon",
-        contactHours: "Açılış Saatleri",
-        contactHoursDesc: "Pzt - Paz: 11:30 - 22:30 <br><span>(Kişi başı 20–30 €)</span>",
-        whatsappTitle: "Online Rezervasyon",
-        whatsappDesc: "WhatsApp üzerinden masanızı kolayca ve hızlıca rezerve edin!",
-        whatsappBtn: "<i class='fa-solid fa-calendar-check'></i> Şimdi Rezervasyon Yap",
-        copyright: "© 2026 Poseidon Restoranı. Tüm hakları saklıdır."
+            {
+                name: "Griechischer Bauernsalat",
+                price: "9,90 EUR",
+                text: "Tomaten, Gurken, Paprika, Oliven, Zwiebeln und Feta.",
+                image: "img/44.jpg",
+                badges: ["Vegetarisch", "Frisch"]
+            },
+            {
+                name: "Pita Brot",
+                price: "3,20 EUR",
+                text: "Warmes Pita Brot mit Olivenoel und Oregano.",
+                image: "img/22.jpg",
+                badges: ["Ofenwarm", "Zum Teilen"]
+            }
+        ]
+    },
+    {
+        id: "desserts",
+        title: "Desserts",
+        image: "img/dessserts.jpg",
+        items: [
+            {
+                name: "Baklava",
+                price: "5,90 EUR",
+                text: "Blaetterteig mit Nuessen, Honigsirup und Zimt.",
+                image: "img/dessserts.jpg",
+                badges: ["Suess", "Traditionell"]
+            },
+            {
+                name: "Galaktoboureko",
+                price: "6,50 EUR",
+                text: "Griechischer Griesskuchen mit Vanillecreme und Sirup.",
+                image: "img/desserts1.jpg",
+                badges: ["Hausgemacht", "Cremig"]
+            },
+            {
+                name: "Joghurt mit Honig",
+                price: "5,20 EUR",
+                text: "Griechischer Joghurt mit Honig, Walnuessen und Zimt.",
+                image: "img/desserts2.jpg",
+                badges: ["Leicht", "Mit Honig"]
+            }
+        ]
     }
+];
+
+const drinks = [
+    {
+        id: "weissweine",
+        title: "Weissweine",
+        image: "img/limonata.jpg",
+        items: [
+            { name: "Assyrtiko Santorini", price: "6,90 EUR", text: "Trockener Weisswein mit mineralischer Frische und feiner Zitrusnote.", image: "img/limonata.jpg", badges: ["Griechischer Wein", "Trocken"] },
+            { name: "Moschofilero", price: "5,90 EUR", text: "Aromatisch, leicht und elegant mit floralen Noten.", image: "img/limonata1.jpg", badges: ["Fruchtig", "Leicht"] },
+            { name: "Hauswein Weiss", price: "4,90 EUR", text: "Unser offener Weisswein, passend zu Fisch und Vorspeisen.", image: "img/limonata2.jpg", badges: ["Hauswein", "Glasweise"] }
+        ]
+    },
+    {
+        id: "rotweine",
+        title: "Rotweine",
+        image: "img/şarap.jpg",
+        items: [
+            { name: "Agiorgitiko", price: "6,50 EUR", text: "Weicher Rotwein mit dunklen Beeren und samtigem Abgang.", image: "img/şarap1.jpg", badges: ["Griechischer Wein", "Samtig"] },
+            { name: "Naoussa Xinomavro", price: "7,20 EUR", text: "Kraeftiger Rotwein mit Wuerze, Struktur und langem Finale.", image: "img/şarap2.jpg", badges: ["Kraeftig", "Trocken"] },
+            { name: "Hauswein Rot", price: "4,90 EUR", text: "Rund, angenehm und ideal zu Gyros, Bifteki und Grillgerichten.", image: "img/şarap3.jpg", badges: ["Hauswein", "Glasweise"] }
+        ]
+    },
+    {
+        id: "biere",
+        title: "Biere",
+        image: "img/bira.jpg",
+        items: [
+            { name: "Mythos", price: "4,20 EUR", text: "Griechisches Lagerbier, frisch und mild.", image: "img/bira1.jpg", badges: ["Griechisch", "Kalt serviert"] },
+            { name: "Helles vom Fass", price: "4,50 EUR", text: "Klassisches helles Bier vom Fass.", image: "img/bira2.jpg", badges: ["Vom Fass", "Beliebt"] },
+            { name: "Alkoholfreies Bier", price: "4,10 EUR", text: "Erfrischend, feinherb und alkoholfrei.", image: "img/bira3.jpg", badges: ["Alkoholfrei", "Erfrischend"] }
+        ]
+    },
+    {
+        id: "ouzo",
+        title: "Ouzo & Spirituosen",
+        image: "img/Ouzo Plomari.jpg",
+        items: [
+            { name: "Ouzo Plomari", price: "3,20 EUR", text: "Klassischer Ouzo mit feinem Anisduft.", image: "img/Mythos.jpg", badges: ["Aperitif", "Eiskalt"] },
+            { name: "Tsipouro", price: "3,50 EUR", text: "Traditioneller Tresterbrand aus Griechenland.", image: "img/Ouzo Plomari.jpg", badges: ["Traditionell", "Digestif"] },
+            { name: "Metaxa 5 Sterne", price: "4,90 EUR", text: "Milder griechischer Weinbrand mit warmer Honignote.", image: "img/Ouzo Plomari.jpg", badges: ["Weinbrand", "Mild"] }
+        ]
+    },
+    {
+        id: "alkoholfrei",
+        title: "Alkoholfreie Getraenke",
+        image: "img/kahve1.jpg",
+        items: [
+            { name: "Hausgemachte Limonade", price: "4,80 EUR", text: "Zitrone, Minze und ein Hauch Honig.", image: "img/limonata.jpg", badges: ["Hausgemacht", "Frisch"] },
+            { name: "Mineralwasser", price: "3,20 EUR", text: "Still oder sprudelnd.", image: "img/kahve.jpg", badges: ["Still", "Sprudel"] },
+            { name: "Cola / Fanta / Sprite", price: "3,60 EUR", text: "Klassische Softdrinks gut gekuehlt.", image: "img/kahve1.jpg", badges: ["Kalt", "Softdrink"] }
+        ]
+    },
+    {
+        id: "kaffee",
+        title: "Kaffee & Tee",
+        image: "img/kahve.jpg",
+        items: [
+            { name: "Griechischer Kaffee", price: "3,40 EUR", text: "Traditionell zubereitet, kraeftig und aromatisch.", image: "img/kahve.jpg", badges: ["Traditionell", "Aromatisch"] },
+            { name: "Espresso", price: "2,70 EUR", text: "Kurz, intensiv und perfekt nach dem Essen.", image: "img/kahve1.jpg", badges: ["Klassisch", "Heiss"] },
+            { name: "Bergtee", price: "3,90 EUR", text: "Griechischer Kraeutertee mit mildem Duft.", image: "img/kahve1.jpg", badges: ["Kraeuter", "Wohltuend"] }
+        ]
+    }
+];
+
+const state = {
+    currentView: "home",
+    history: ["home"],
+    activeCategory: categories[0],
+    section: "menu"
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-    const splash = document.getElementById('splash-screen');
-    const langModal = document.getElementById('language-modal');
-    const mainContent = document.getElementById('main-site-content');
-    
-    setTimeout(() => {
-        if (splash) {
-            splash.classList.add('splash-hidden');
-            setTimeout(() => {
-                if (langModal) langModal.classList.add('modal-active');
-            }, 300);
-        }
-    }, 2000);
+const viewMap = {
+    home: document.getElementById("view-home"),
+    menu: document.getElementById("view-menu"),
+    category: document.getElementById("view-category"),
+    detail: document.getElementById("view-detail"),
+    drinks: document.getElementById("view-drinks"),
+    reservation: document.getElementById("view-reservation"),
+    about: document.getElementById("view-about"),
+    contact: document.getElementById("view-contact")
+};
 
-    const langButtons = document.querySelectorAll('.lang-btn');
-    langButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const selectedLang = button.getAttribute('data-lang');
+const categoryContainer = document.getElementById("foodCategories");
+const drinkContainer = document.getElementById("drinkCategories");
+const dishList = document.getElementById("dishList");
+const categoryTitle = document.getElementById("categoryTitle");
+const menuSearch = document.getElementById("menuSearch");
+const sideMenu = document.getElementById("sideMenu");
+const backButton = document.getElementById("backButton");
 
-            
-            document.getElementById('nav-menu-btn').innerHTML = translations[selectedLang].navMenu;
-            document.getElementById('nav-contact-btn').innerHTML = translations[selectedLang].navContact;
-            document.getElementById('nav-map-btn').innerHTML = translations[selectedLang].navMap;
-            
-            document.getElementById('hero-title').innerText = translations[selectedLang].heroTitle;
-            document.getElementById('hero-desc').innerText = translations[selectedLang].heroDesc;
-            document.getElementById('hero-btn').innerText = translations[selectedLang].heroBtn;
+function createImage(src, alt) {
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = alt;
+    return img;
+}
 
-            
-            const aboutBadge = document.querySelector('.about-badge');
-            if (aboutBadge) aboutBadge.innerText = translations[selectedLang].aboutBadge;
+function renderCategories(list = categories) {
+    categoryContainer.innerHTML = "";
+    list.forEach((category) => {
+        const button = document.createElement("button");
+        button.className = "category-card";
+        button.type = "button";
+        button.append(createImage(category.image, category.title));
+        button.insertAdjacentHTML("beforeend", `<strong>${category.title}</strong><i class="fa-solid fa-chevron-right"></i>`);
+        button.addEventListener("click", () => openCategory(category.id));
+        categoryContainer.append(button);
+    });
+}
 
-            const aboutTitle = document.querySelector('.about-title');
-            if (aboutTitle) aboutTitle.innerText = translations[selectedLang].aboutTitle;
+function renderDrinks() {
+    drinkContainer.innerHTML = "";
+    drinks.forEach((drink) => {
+        const button = document.createElement("button");
+        button.className = "drink-card";
+        button.type = "button";
+        button.append(createImage(drink.image, drink.title));
+        button.insertAdjacentHTML("beforeend", `<strong>${drink.title}</strong><i class="fa-solid fa-chevron-down"></i>`);
+        button.addEventListener("click", () => openDrinkCategory(drink.id));
+        drinkContainer.append(button);
+    });
+}
 
-            const aboutDescs = document.querySelectorAll('.about-desc');
-            if (aboutDescs[0]) aboutDescs[0].innerText = translations[selectedLang].aboutDesc1;
-            if (aboutDescs[1]) aboutDescs[1].innerText = translations[selectedLang].aboutDesc2;
+function renderDishes(category) {
+    categoryTitle.textContent = category.title;
+    dishList.innerHTML = "";
+    category.items.forEach((dish) => {
+        const button = document.createElement("button");
+        button.className = "dish-row";
+        button.type = "button";
+        button.append(createImage(dish.image, dish.name));
+        button.insertAdjacentHTML(
+            "beforeend",
+            `<span><h3>${dish.name}</h3><p>${dish.text}</p></span><strong>${dish.price}</strong>`
+        );
+        button.addEventListener("click", () => openDetail(dish));
+        dishList.append(button);
+    });
+}
 
-            const featItems = document.querySelectorAll('.feat-item');
-            if (featItems[0]) featItems[0].innerHTML = translations[selectedLang].feat1;
-            if (featItems[1]) featItems[1].innerHTML = translations[selectedLang].feat2;
+function setActiveNav(viewName) {
+    const navView = ["category", "detail"].includes(viewName) ? state.section : viewName;
+    document.querySelectorAll("[data-view]").forEach((item) => {
+        item.classList.toggle("active", item.dataset.view === navView);
+    });
+}
 
-            
-            const sectionTitles = document.querySelectorAll('.section-title');
-            const sectionSubtitles = document.querySelectorAll('.section-subtitle');
-            if (sectionTitles[0]) sectionTitles[0].innerText = translations[selectedLang].menuTitle;
-            if (sectionSubtitles[0]) sectionSubtitles[0].innerText = translations[selectedLang].menuSubtitle;
+function showView(viewName, push = true) {
+    Object.entries(viewMap).forEach(([name, view]) => {
+        view.classList.toggle("active", name === viewName);
+    });
+    state.currentView = viewName;
+    document.body.classList.toggle("home-active", viewName === "home");
+    if (push && state.history[state.history.length - 1] !== viewName) {
+        state.history.push(viewName);
+    }
+    backButton.style.visibility = state.currentView === "home" ? "hidden" : "visible";
+    setActiveNav(viewName);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-            
-            const productCards = document.querySelectorAll('.menu-photo-card');
-            productCards.forEach((card, index) => {
-                if (translations[selectedLang].items[index]) {
-                    const nameSpan = card.querySelector('.item-name');
-                    const descParagraph = card.querySelector('.item-desc');
-                    
-                    if (nameSpan) nameSpan.innerText = translations[selectedLang].items[index].title;
-                    if (descParagraph) descParagraph.innerText = translations[selectedLang].items[index].desc;
-                }
-            });
+function openCategory(id) {
+    const category = categories.find((item) => item.id === id) || categories[0];
+    state.activeCategory = category;
+    state.section = "menu";
+    renderDishes(category);
+    showView("category");
+}
 
-            
-            if (sectionTitles[1]) sectionTitles[1].innerText = translations[selectedLang].contactTitle;
+function openDrinkCategory(id) {
+    const category = drinks.find((item) => item.id === id) || drinks[0];
+    state.section = "drinks";
+    renderDishes(category);
+    showView("category");
+}
 
-            const contactCards = document.querySelectorAll('.contact-card');
-            if (contactCards[0]) {
-                const h4 = contactCards[0].querySelector('h4');
-                if (h4) h4.innerText = translations[selectedLang].contactAddress;
-            }
-            if (contactCards[1]) {
-                const h4 = contactCards[1].querySelector('h4');
-                if (h4) h4.innerText = translations[selectedLang].contactPhone;
-            }
-            if (contactCards[2]) {
-                const h4 = contactCards[2].querySelector('h4');
-                const p = contactCards[2].querySelector('p');
-                if (h4) h4.innerText = translations[selectedLang].contactHours;
-                if (p) p.innerHTML = translations[selectedLang].contactHoursDesc;
-            }
+function openDetail(dish) {
+    document.getElementById("detailImage").src = dish.image;
+    document.getElementById("detailImage").alt = dish.name;
+    document.getElementById("detailTitle").textContent = dish.name;
+    document.getElementById("detailPrice").textContent = dish.price;
+    document.getElementById("detailText").textContent = dish.text;
+    document.getElementById("detailBadges").innerHTML = dish.badges
+        .map((badge, index) => `<div class="badge"><i class="fa-solid fa-${index === 0 ? "star" : "leaf"}"></i>${badge}</div>`)
+        .join("");
+    showView("detail");
+}
 
-            
-            const whatsappCard = document.querySelector('.whatsapp-card');
-            if (whatsappCard) {
-                const h4 = whatsappCard.querySelector('h4');
-                const p = whatsappCard.querySelector('p');
-                const btn = whatsappCard.querySelector('.btn-whatsapp');
-                if (h4) h4.innerText = translations[selectedLang].whatsappTitle;
-                if (p) p.innerText = translations[selectedLang].whatsappDesc;
-                if (btn) btn.innerHTML = translations[selectedLang].whatsappBtn;
-            }
+function goBack() {
+    if (state.history.length <= 1) {
+        showView("home", false);
+        return;
+    }
+    state.history.pop();
+    const previous = state.history[state.history.length - 1] || "home";
+    showView(previous, false);
+}
 
-            
-            const copyrightText = document.querySelector('.copyright-text');
-            if (copyrightText) copyrightText.innerText = translations[selectedLang].copyright;
+function toggleSideMenu(open) {
+    sideMenu.classList.toggle("open", open);
+    sideMenu.setAttribute("aria-hidden", String(!open));
+}
 
-            
-            if (langModal) langModal.classList.remove('modal-active');
-            setTimeout(() => {
-                if (mainContent) mainContent.classList.add('content-visible');
-            }, 300);
+function wireNavigation() {
+    document.querySelectorAll("[data-view]").forEach((item) => {
+        item.addEventListener("click", () => {
+            const view = item.dataset.view;
+            toggleSideMenu(false);
+            showView(view);
         });
     });
+
+    document.getElementById("openMenu").addEventListener("click", () => toggleSideMenu(true));
+    document.getElementById("closeMenu").addEventListener("click", () => toggleSideMenu(false));
+    sideMenu.addEventListener("click", (event) => {
+        if (event.target === sideMenu) toggleSideMenu(false);
+    });
+    backButton.addEventListener("click", goBack);
+    document.getElementById("detailBack").addEventListener("click", goBack);
+}
+
+function wireSearch() {
+    menuSearch.addEventListener("input", () => {
+        const query = menuSearch.value.trim().toLowerCase();
+        if (!query) {
+            renderCategories();
+            return;
+        }
+        const matched = categories
+            .map((category) => ({
+                ...category,
+                items: category.items.filter((dish) => `${dish.name} ${dish.text}`.toLowerCase().includes(query))
+            }))
+            .filter((category) => category.items.length || category.title.toLowerCase().includes(query));
+        renderCategories(matched.length ? matched : categories);
+    });
+}
+
+
+function wireReservation() {
+    const form = document.getElementById("reservationForm");
+    if (!form) return;
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault(); 
+
+        
+        const name = document.getElementById("resName") ? document.getElementById("resName").value.trim() : "";
+        const guests = document.getElementById("resGuests") ? document.getElementById("resGuests").value : "";
+        const date = document.getElementById("resDate") ? document.getElementById("resDate").value : "";
+        const time = document.getElementById("resTime") ? document.getElementById("resTime").value : "";
+        const phone = document.getElementById("resPhone") ? document.getElementById("resPhone").value.trim() : ""; // Telefon numarasını çektik
+        const note = document.getElementById("resNote") ? document.getElementById("resNote").value.trim() : "";
+
+        const restaurantPhone = "905439676661"; 
+
+        let message = `Hallo Poseidon Team,\n\n`;
+        message += `Ich möchte gerne einen Tisch reservieren:\n`;
+        message += `✍️ Name: ${name}\n`;
+        message += `📱 Telefon: ${phone}\n`; 
+        message += `👥 Personen: ${guests}\n`;
+        message += `📅 Datum: ${date}\n`;
+        message += `⏰ Uhrzeit: ${time}\n`;
+        
+        if (note) {
+            message += `📝 Notiz: ${note}\n`;
+        }
+        
+        message += `\nBitte bestätigen Sie meine Reservierung. Vielen Dank!`;
+
+        const encodedMessage = encodeURIComponent(message);
+
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${restaurantPhone}&text=${encodedMessage}`;
+
+        const noteElement = document.getElementById("reservationNote");
+        if (noteElement) {
+            noteElement.textContent = "Bitte warten... Sie werden zu WhatsApp weitergeleitet.";
+        }
+
+        window.open(whatsappUrl, "_blank");
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    renderCategories();
+    renderDrinks();
+    renderDishes(categories[0]);
+    wireNavigation();
+    wireSearch();
+    wireReservation();
+    showView("home", false);
 });
