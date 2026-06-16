@@ -401,7 +401,7 @@ function wireReservation() {
         const phone = document.getElementById("resPhone") ? document.getElementById("resPhone").value.trim() : ""; // Telefon numarasını çektik
         const note = document.getElementById("resNote") ? document.getElementById("resNote").value.trim() : "";
 
-        const restaurantPhone = "905439676661"; 
+        const restaurantPhone = "905000000"; 
 
         let message = `Hallo Poseidon Team,\n\n`;
         message += `Ich möchte gerne einen Tisch reservieren:\n`;
